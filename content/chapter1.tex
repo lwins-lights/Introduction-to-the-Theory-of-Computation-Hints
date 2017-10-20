@@ -1,0 +1,119 @@
+\section{Chapter 1: Regular Languages}
+
+\begin{itemize}
+	
+	
+	\item[\hard 1.45]
+	Let $A/B = \{w \ | \ wx \in A \text{ for some } x \in B \}$. Show that if $A$ is regular and $B$ is any language, then $A/B$ is regular. 
+	
+	\hint
+	Let $M = (Q, \Sigma, \delta, q_0, F)$ be a DFA such that $L(M) = A$. Construct
+	\[
+		F' = \{ q \in Q \ | \ \exists x \in B,\ \delta(q, x) \in F \}.
+	\]
+	
+	
+	\item[\hard 1.56]
+	If $A$ is a set of natural numbers and $k$ is a natural number greater than $1$, let
+	\[
+		B_k(A) = \{ w \ | \ w \text{ is the representation in base $k$ of some number in $A$} \}.
+	\]
+	Here, we do not allow leading $\mathtt{0}$s in the representation of a number. For example, $B_2(\{3, 5\}) = \{ \mathtt{11}, \mathtt{101} \}$ and $B_3(\{3, 5\}) = \{ \mathtt{10}, \mathtt{12} \}$. Give an example of a set $A$ for which $B_2(A)$ is regular but $B_3(A)$ is not regular. Prove that your example works.
+	
+	\hint
+	Let $A = \{2^n \ | \ n \in \mathbb{N} \}$. Then use pumping lemma on $B_3(A)$, after which do a little bit of algebra or number theory.
+	
+	
+	\item[\hard 1.57] 
+	If $A$ is any language, let $A_{\frac{1}{2}-}$ be the set of all first halves of strings in $A$ so that
+	\[
+		A_{\frac{1}{2}-} = \{ x \ | \ \text{for some $y$, $|x| = |y|$ and $xy \in A$} \}.
+	\]
+	Show that if $A$ is regular, then so is $A_{\frac{1}{2}-}$.
+	
+	\hint
+	Let $M$ be a DFA such that $L(M) = A$. Utilizing $M$, design an NFA which accepts $A_{\frac{1}{2}-}$ by guessing the $k$-th character from the end of $y$ while reading the $k$-th character of $x$.
+	
+	
+	\item[\hard 1.58] 
+	If $A$ is any language, let $A_{\frac{1}{3}-\frac{1}{3}}$ be the set of all strings in $A$ with their middle thirds removed so that	
+	\[
+		A_{\frac{1}{3}-\frac{1}{3}} = \{ xz \ | \ \text{for some $y$, $|x| = |y| = |z|$ and $xyz \in A$} \}.
+	\]
+	Show that if $A$ is regular, then $A_{\frac{1}{3}-\frac{1}{3}}$ is not necessarily regular
+	
+	\hint
+	Let $A = \mathtt{a}^* \texttt{\#} \mathtt{b}^*$. Prove $A_{\frac{1}{3}-\frac{1}{3}} \cap \mathtt{a}^* \mathtt{b}^*$ is not regular by pumping lemma.
+	
+	
+	\item[\hard 1.59]
+	Let $M = (Q, \Sigma, \delta, q_0, F)$ be a DFA and let $h$ be a state of $M$ called its ``home''. A \bm{synchronizing sequence} for $M$ and $h$ is a string $s \in \Sigma^*$ where $\delta(q, s) = h$ for every $q \in Q$. (Here we have extended $\delta$ to strings, so that $\delta(q, s)$ equals the state where $M$ ends up when $M$ starts at state $q$ and reads input $s$.) Say that $M$ is \bm{synchronizable} if it has a synchronizing sequence for some state $h$. Prove that if $M$ is a $k$-state synchronizable DFA, then it has a synchronizing sequence of length at most $k^3$. Can you improve upon this bound?
+	
+	\hint
+	Let $Q'$ stands for some subset of $Q$. Try to design a method that finds a relatively short string $w$ such that $|\delta(Q', w)| < |Q'|$, where $\delta(Q', w) = \{ \delta(q, w) \ | \ q \in Q' \}$.
+	
+	
+	\item[\hard 1.63] 
+	\begin{itemize}
+		\item[a.]
+		Let $A$ be an infinite regular language. Prove that $A$ can be split into two infinite disjoint regular subsets.
+		\item[b.]
+		Let $B$ and $D$ be two languages. Write $B \Subset D$ if $B \subseteq D$ and $D$ contains infinitely many strings that are not in $B$. Show that if $B$ and $D$ are two regular languages where $B \Subset D$, then we can find a regular language $C$ where $B \Subset C \Subset D$.
+	\end{itemize}
+
+	\hint
+	\begin{itemize}
+		\item[a.]
+		$A$'s being infinite implies that there is an infinite regular language $x y^* z \subseteq A$ given by pumping lemma. Then how about $x (yy)^* z$?
+		\item[b.]
+		Plug $A = D - B$ into a. to get $A = A_1 \cup A_2$, and then let $C = B \cup A_1$.
+	\end{itemize}
+
+
+	\item[\hard 1.65]
+	Prove that for each $n>0$, a language $B_n$ exists where
+	\begin{itemize}
+		\item[a.]
+		$B_n$ is recognizable by an NFA that has $n$ states, and
+		\item[b.]
+		if $B_n = A_1 \cup \cdots \cup A_k$ for regular languages $A_i$, then at least one of the $A_i$ requires a DFA with exponentially many states.
+	\end{itemize}
+
+	\hint
+	Consider $B_{n+2} = \Sigma^*\mathtt{1}\mathtt{0}^{n}$. Then use Myhill--Nerode theorem. However the theorem is not necessary for a proof, though applying it can simplify the work.
+	
+	
+	\item[\hard 1.67]
+	Let the \bm{rotational closure} of language $A$ be $RC(A) = \{ yx \ | \ xy \in A \}$.
+	\begin{itemize}
+		\item[a.]
+		Show that for any language $A$, we have $RC(A) = RC(RC(A))$.
+		\item[b.]
+		Show that the class of regular languages is closed under rotational closure.
+	\end{itemize}
+	\hint
+	For b., let $M = (Q, \Sigma, \delta, q_0, F)$ be a DFA such that $L(M) = A$. Utilizing $M$, design an NFA which accepts $RC(A)$ by guessing $\delta(q_0, x)$ and where $y$ ends in $yx$.
+	
+	
+	\item[\hard 1.68] 
+	In the traditional method for cutting a deck of playing cards, the deck is arbitrarily
+	split two parts, which are exchanged before reassembling the deck. In a more
+	complex cut, called Scarne’s cut, the deck is broken into three parts and the middle
+	part in placed first in the reassembly. We’ll take Scarne’s cut as the inspiration for
+	an operation on languages. For a language $A$, let $CUT(A) = \{ yxz \ | \ xyz \in A \}$.
+	\begin{itemize}
+		\item[a.]
+		Exhibit a language $B$ for which $CUT(B) \neq CUT(CUT(B))$.
+		\item[b.]
+		Show that the class of regular languages is closed under $CUT$.
+	\end{itemize}
+	\hint
+	\begin{itemize}
+		\item[a.]
+		$B = \mathtt{123}$.
+		\item[b.]
+		Just do like what we do in problem 1.67.
+	\end{itemize}
+
+	
+\end{itemize}
