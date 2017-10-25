@@ -8,7 +8,7 @@ Be careful to read these hints, because they often have enough details. In other
 
 - Chapter 1: Regular Languages (in check)
 
-* Chapter 2
+* Chapter 2: Context-Free Languages (incomplete)
 
 * Chapter 3
 
