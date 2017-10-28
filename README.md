@@ -15,7 +15,8 @@ We highly recommend you to see these hints as _last resort_, because you will _n
 * __Chapter 4: Decidability__  
 	Problems unsolved yet: 4.29, 4.30, 4.31, 4.32.
 
-* Chapter 5
+* __Chapter 5: Reducibility__  
+	Problems unsolved yet: 5.14, 5.17, 5.18, 5.19, 5.20, 5.24, 5.26~5.36
 
 * Chapter 6
 

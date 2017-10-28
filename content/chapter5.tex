@@ -2,6 +2,87 @@
 
 \begin{itemize}
 	
-	\item 
+	%		5.9			%
+	\item[5.9]
+	Reduce to $A_{\TM}$. To determine whether \TM\ $M$ accepts $w$, construct \TM\ $N$ which always accepts $\TT{01}$ but accepts $\TT{10}$ if and only if $M$ accepts $w$.
+	
+	%		5.10		%
+	\item[5.10]
+	\Omit
+	
+	%		5.11		%
+	\item[5.11]
+	\Omit
+	
+	%		5.12		%
+	\item[5.12]
+	Reduce to $E_{\TM}$. To determine whether \TM\ $M$ accepts nothing, construct \TM\ $N$ which simulates $M$ on $N$'s own input $w$ but never writes a blank symbol over a nonblank symbol unless when $M$ accepts.
+	
+	%		5.13		%
+	\item[5.13]
+	Reduce to $E_{\TM}$. To determine whether \TM\ $M$ accepts nothing, construct \TM\ $N$ which simulates $M$ on $N$'s own input $w$ and obviously has no useless state except the one $q_{\RM{accept}}$.
+	
+	%		5.14		%
+	\item[5.14]
+	\Empty
+	
+	%		5.15		%
+	\item[5.15]
+	Let $M'$ be $M$ after modifying all its transitions $\delta(q_i,a) = (q_{\RM{accept}},b,X)$ to $\delta(q_i,a) = (q_{\RM{reject}},b,X)$, and then modifying all $\delta(q_i,a) = (q_j,b,\RM{L})$ to $\delta(q_i,a) = (q_{\RM{accept}},b,\RM{R})$. The problem is now reduced to checking whether $M'$, as a \emph{\TM\ with stay put instead of left} described in problem 3.13, accepts $w$. It is easy since $L(M')$ is regular by the solution to problem 3.13.
+	
+	%		5.16		%
+	\item[5.16]
+	Suppose for the sake of contradiction that $BB$ is computable. Then obviously there exists a \TM\ $M$ having $k$ states, which writes $BB(n) + 1$ \TT{1}s on the tape, when given input $\Bra{n}$. Further, using $M$ we can construct a series of \TM s $M_n$ having exactly $k+n/2$ states, which writes $BB(n) + 1$ \TT{1}s on the tape when started with a blank tape. However, then $M_{2k}$, as a $2k$-state \TM , would write $BB(2k) + 1$ \TT{1}s. Absurd.
+	
+	%		5.17		%
+	\item[5.17]
+	\Empty
+	
+	%		5.18		%
+	\item[5.18]
+	\Empty
+	
+	%		5.19		%
+	\item[5.19]
+	\Empty
+	
+	%		5.20		%
+	\item[5.20]
+	\Empty
+	
+	%		5.21		%
+	\item[5.21]
+	The hint in the textbook is sufficient.
+	
+	%		5.22		%
+	\item[5.22]
+	\begin{itemize}
+		\item[$\Leftarrow$:] Trivial.
+		\item[$\Rightarrow$:] Let $f(x) = \Bra{M, x}$, where \TM\ $M$ is $A$'s recognizer. 
+	\end{itemize}
+
+	%		5.23		%
+	\item[5.23]
+	\begin{itemize}
+		\item[$\Leftarrow$:] Trivial, since $\TT{0}^*\TT{1}^*$ is surely decidable.
+		\item[$\Rightarrow$:] Suppose there is an $A$'s decider, then $f$ defined as follows is computable.
+		\[
+			f(x) = 
+			\left\{
+				\begin{array}{ll}
+					\TT{01}, & x \in A \\
+					\TT{10}, & x \notin A
+				\end{array}
+			\right.
+		\]
+	\end{itemize}
+
+	%		5.24		%
+	\item[5.24]
+	\Empty
+	
+	%		5.25		%
+	\item[5.25]
+	$\overline{E_{\TM}} \Leqm A_{\TM}$ by problem 5.22 and it is well known that $A_{\TM} \Leqm E_{\TM}$. By the way, it is not difficult to construct an undecidable language $B$ such that $B =_{\RM{m}} \overline{B}$.
 	
 \end{itemize}
