@@ -2,16 +2,26 @@
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{comment}
+\usepackage{color}
 \usepackage[margin=1in]{geometry}
 
-\newcommand{\hint}{{\it Hint. }}
-\newcommand{\hard}{$^\star$}
-\newcommand{\bm}[1]{\textbf{\textit{#1}}}
-\renewcommand{\tt}[1]{\texttt{#1}}
-\renewcommand{\sc}[1]{\textsc{#1}}
-\newcommand{\abr}[1]{\langle {#1} \rangle}
+%		custom symbol		%
 
-\title{Introduction to the Theory of Computation: Hints}
+\newcommand{\Omit}{{\it Refer to the textbook.}}
+\newcommand{\Empty}{{\it \color{red} Need a solution.}}
+\newcommand{\Star}{$^\star$}
+\newcommand{\TT}[1]{\texttt{#1}}
+\newcommand{\Bra}[1]{\langle {#1} \rangle}
+
+\newcommand{\CFL}{\textsf{CFL}}
+\newcommand{\CFG}{\textsf{CFG}}
+\newcommand{\DFA}{\textsf{DFA}}
+\newcommand{\TM}{\textsf{TM}}
+\newcommand{\PDA}{\textsf{PDA}}
+
+%		initialization		%
+
+\title{Solution to Introduction to the Theory of Computation}
 \author{Lwins\_Lights}
 \date{}
 
@@ -23,5 +33,8 @@
 	
 	\include{content/chapter1}
 	\include{content/chapter2}
+	\include{content/chapter3}
+	\include{content/chapter4}
+	\include{content/chapter5}
 	
 \end{document}

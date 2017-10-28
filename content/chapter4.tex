@@ -1,0 +1,100 @@
+\section{Decidability}
+
+\begin{itemize}
+	
+	%		4.10		%
+	\item[4.10]
+	\Omit
+	
+	%		4.11		%
+	\item[4.11]
+	By the pumping lemma, $L(M)$ is an infinite language $\iff$ $L(M)$ includes a string of length $p$. Since $R = \Sigma^p \Sigma^*$ is a regular language, it is easy to design a \PDA \ $P$ recognizing $L(M) \cap R$. Then use $E_{\PDA}$'s decider to decide whether $L(M) \cap R = \varnothing$.
+	
+	%		4.12		%
+	\item[4.12]
+	\Omit
+	
+	%		4.13		%
+	\item[4.13]
+	$L(R) \subseteq L(S) \iff L(R) \cup L(S) = L(S)$, which can be decided by $EQ_{\DFA}$'s decider.
+	
+	%		4.14		%
+	\item[4.14]
+	\Omit
+	
+	%		4.15		%
+	\item[\Star 4.15]
+	By the pumping lemma, $\TT{1}^k \in L(G) \implies \TT{1}^{k+p!} \in L(G)$ for every $k \geq p$. Therefore $\TT{1}^* \subseteq L(G) \iff \{ \TT{1}^k \ | \ k \leq p+p! \} \subseteq L(G)$, which can be easily checked by a \TM \ in finite time.
+	
+	%		4.16		%
+	\item[4.16]
+	Since $A = \{ \Bra{R} \ | \ \text{$R$ is a regular expression, } R \cap \Sigma^* \TT{111} \Sigma^* \neq \varnothing \}$, we only need an $E_{\DFA}$'s decider.
+	
+	%		4.17		%
+	\item[4.17]
+	Suppose we have two \DFA s $D_1$ and $D_2$. Let $D$ be a \DFA \ recognizing $L(D_1) \oplus L(D_2)$, where $\oplus$ means symmetric difference. By the pumping lemma, $L(D) \cap (\Sigma \cup \epsilon)^p = \varnothing \implies L(D) = \varnothing$, thus $p$ can be the required length.
+	
+	%		4.18		%
+	\item[\Star 4.18] 
+	\begin{itemize}
+		\item[$\Leftarrow$:] It is enough to design a \TM , which recognizes $C$ by checking whether $\Bra{x,y} \in D$ for all possible $y$ one by one.
+		\item[$\Rightarrow$:] Suppose \TM \ $M$ recognizes $C$. Let $D = \{ \Bra{x,y} \ | \ x \in C$  and $y$ is the computation history of $M$ on input $x \}$, which is obviously decidable.
+	\end{itemize}
+
+	%		4.19		%
+	\item[\Star 4.19]
+	Let $C$ be a recognizable but undecidable language, e.g., $A_{\TM}$. Construct $D$ provided by problem 4.18. Letting homomorphism $f$ satisfy $f(\Bra{x,y}) = x$ for every $x,y$ we obtain $f(D) = C$.
+	
+	%		4.20		%
+	\item[4.20]
+	Let $M$ be a \TM \ which runs both $\overline{A}$'s recognizer and $\overline{B}$'s recognizer on its own input. $M$ accepts when $\overline{B}$'s recognizer accepts and rejects when $\overline{A}$'s recognizer accepts. Clearly $C = L(M)$ separates $A$ and $B$.
+	
+	%		4.21		%
+	\item[4.21]
+	$M$ is a \DFA \ that accepts $w^\mathcal{R}$ whenever it accepts $w$ $\iff$ $L(M) = L(M)^\mathcal{R}$, which can be decided by $EQ_{\DFA}$'s decider.
+	
+	%		4.22		%
+	\item[4.22]
+	In order to determine whether $L(R)$ is prefix-free, it suffices to check whether the \DFA \ recognizing $L(R)$ has the property that from a reachable accept state we could arrive an accept state again by several transitions.
+	
+	%		4.23		%
+	\item[\Star 4.23]
+	\Omit
+	
+	%		4.24		%
+	\item[4.24]
+	A \PDA \ $P = (Q, \Sigma, \Gamma, \delta, q_0, F)$ has an useless state $q \in Q$ if and only if \PDA \ $P' = (Q, \Sigma, \Gamma, \delta, q_0, \{q\})$ recognizes $\varnothing$. Therefore we can use $E_{\PDA}$'s decider to solve it.
+	
+	%		4.25		%
+	\item[\Star 4.25]
+	\Omit
+	
+	%		4.26		%
+	\item[\Star 4.26] 
+	$M$ is a \DFA \ that accepts some palindrome $\iff$ \CFL \ $\{ w \ | \ w = w^{\mathcal{R}} \} \cap L(M)$ is not empty, which can be decided by $E_{\PDA}$'s decider.
+	
+	%		4.27		%
+	\item[\Star 4.27] 
+	Refer to the solution to problem 4.26.
+	
+	%		4.28		%
+	\item[4.28]
+	$x$ is a substring of some $y \in L(G)$ $\iff$ $L(G) \cap \Sigma^* x \Sigma^* \neq \varnothing$, which can be decided by $E_{\PDA}$'s decider.
+	
+	%		4.29		%
+	\item[4.29]
+	\Empty
+	
+	%		4.30		%
+	\item[4.30]
+	\Empty		
+	
+	%		4.31		%
+	\item[4.31]
+	\Empty
+	
+	%		4.32		%
+	\item[4.32]
+	\Empty
+	
+\end{itemize}
