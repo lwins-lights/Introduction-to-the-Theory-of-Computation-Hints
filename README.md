@@ -12,7 +12,7 @@ We highly recommend you to see these hints as _last resort_, because you will _n
 
 * Chapter 3
 
-* __Chapter 4: Decidability__
+* __Chapter 4: Decidability__  
 	Problems unsolved yet: 4.29, 4.30, 4.31, 4.32.
 
 * Chapter 5
