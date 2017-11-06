@@ -1,0 +1,119 @@
+\section{Advanced Topics in Computability Theory}
+
+\begin{itemize}
+	
+	%		6.6			%
+	\item[6.6]
+	Let $M = P_{\Bra{N}}$ and $N$ print $\Bra{M} = q(\Bra{N})$.
+	
+	%		6.7			%
+	\item[6.7]
+	A \TM\ that always loops.
+	
+	%		6.8			%
+	\item[\Star 6.8]
+	Suppose for the sake of contradiction that $f$ is a reduction from $EQ_{\TM}$ to $\overline{EQ_{\TM}}$. It is easy to generalize the fixed-point version of the recursion theorem to find $f(\Bra{M, N}) = \Bra{M', N'}$ such that $M, N$ simulate $M', N'$ respectively. Then $\Bra{M, N} \in EQ_{\TM} \iff \Bra{M', N'} \in \overline{EQ_{\TM}} \iff \Bra{M, N} \in \overline{EQ_{\TM}}$. Absurd.
+	
+	%		6.9			%
+	\item[6.9]
+	\Omit
+	
+	%		6.10		%
+	\item[6.10]
+	\Omit
+	
+	%		6.11		%
+	\item[\Star 6.11]
+	$(\mathbb{R}, =, <)$.
+	
+	%		6.12		%
+	\item[6.12]
+	\Omit
+	
+	%		6.13		%
+	\item[6.13]
+	Since $\mathbb{Z}_m$ is finite, any sentence in the language of $\mathcal{F}_m$ can be decided by brute-force checking.
+	
+	%		6.14		%
+	\item[6.14]
+	Let $J = \TT{0}A \cup \TT{1}B$.
+	
+	%		6.15		%
+	\item[6.15]
+	Let $B = A_{\TM}^A = \{ \Bra{M^{A}, w} \ | \ \text{$M^A$ accepts $w$} \}$. Then apply any classical method used in proving undecidablity of $A_{\TM}$.
+	
+	%		6.16		%
+	\item[\Star 6.16]
+	\Empty
+	
+	%		6.17		%
+	\item[\Star 6.17]
+	Let 
+	\begin{align*}
+		A = \{ \Bra{M, w} \ | \ \text{\TM\ $M$ on input $w$ halts with \TT{0} on its tape} \} \\
+		B = \{ \Bra{M, w} \ | \ \text{\TM\ $M$ on input $w$ halts with \TT{1} on its tape} \}
+	\end{align*}
+	If there is a $C$'s decider $N$, we can construct \TM\ $M$ which on input $w$ first run $N$ on $\Bra{M, w}$ to know that $M$ would not halt with $x \in \{ \TT{0}, \TT{1} \}$ on $M$'s tape, and then violates it.
+	
+	%		6.18		%
+	\item[6.18]
+	\Empty
+	
+	%		6.19		%
+	\item[6.19]
+	$ |\{ L(M^A) \ | \ \text{$M^A$ is an oracle \TM} \}| \leq |\{ M^A \ | \ \text{$M^A$ is an oracle \TM} \}| \leq \aleph_0 < 2^{\aleph_0} = |\{ L \ | \ \text{$L$ is a language} \}|$.
+	
+	%		6.20		%
+	\item[6.20]
+	\Empty
+	
+	%		6.21		%
+	\item[6.21]
+	\Empty
+	
+	%		6.22		%
+	\item[6.22]
+	\Empty
+	
+	%		6.23		%
+	\item[6.23]
+	Reduce from Problem 6.24.
+	
+	%		6.24		%
+	\item[6.24]
+	Reduce from Problem 6.25.
+	
+	%		6.25		%
+	\item[6.25]
+	\Empty
+	
+	%		6.26		%
+	\item[\Star 6.26] 
+	Suppose for the sake of contradiction that $\K(xy) \leq \K(x) + \K(y) + c$ always holds. Define
+	$$
+		f_n = \sum_{|x|=n} {2^{-\K(x)}}.
+	$$
+	Then $\K(xy) \leq \K(x) + \K(y) + c \implies f_{n+m} \geq 2^{-c} f_n f_m \implies f_{k n} \geq (2^{-c} f_n)^{k}$. On the other hand, Corollary 6.30 implies $f_n \leq n + 1$. Therefore, 
+	$$
+		f_n \leq 2^c \sqrt[k]{f_{k n}} \leq 2^c \sqrt[k]{kn + 1}.
+	$$
+	Letting $k \to +\infty$ we obtain that $f_n \leq 2^c$ for all $n$. However, there is a \TM\ $M$ which on input $\Bra{p, q}$ ($p, q \in \mathbb{N}$ and $q < 2^{2^p}$) halts with $r(p,q)$, a $2^p$-bits binary representation of $q$, on its tape. So $\K(r(p,q)) \leq 2 \log_2 p + \log_2 q + d$ with some constant $d$. Then, if $n = 2^p$ for some large $p$,
+	$$
+		f_{n} = \sum_{|x|=n} {2^{-\K(x)}} \geq \sum_{q < 2^n} {2^{-\K(r(p,q))}} \geq 2^{-2 \log_2 p - d} \sum_{q < 2^n} \frac{1}{q} \geq \frac{n}{2^d (\log n)^2},
+	$$
+	which apparently contradicts with $f_n \leq 2^c$.
+	
+	%		6.27		%
+	\item[6.27]
+	\Empty
+	
+	%		6.28		%
+	\item[6.28]
+	\begin{enumerate}
+		\item[a.] $x = 0 \iff \forall y,\ x+y=y$
+		\item[b.] $x = 1 \iff \forall y,\ y=0 \wedge x+y=1$ 
+		\item[c.] $x = y \iff \forall z,\ z=0 \wedge x+z=y$
+		\item[d.] $x < y \iff \exists z,\ \neg(z = 0) \wedge x + z = y$
+	\end{enumerate}
+	
+\end{itemize}

@@ -4,7 +4,7 @@
 	
 	%		5.9			%
 	\item[5.9]
-	Reduce to $A_{\TM}$. To determine whether \TM\ $M$ accepts $w$, construct \TM\ $N$ which always accepts $\TT{01}$ but accepts $\TT{10}$ if and only if $M$ accepts $w$.
+	Reduce from $A_{\TM}$. To determine whether \TM\ $M$ accepts $w$, construct \TM\ $N$ which always accepts $\TT{01}$ but accepts $\TT{10}$ if and only if $M$ accepts $w$.
 	
 	%		5.10		%
 	\item[5.10]
@@ -16,11 +16,11 @@
 	
 	%		5.12		%
 	\item[5.12]
-	Reduce to $E_{\TM}$. To determine whether \TM\ $M$ accepts nothing, construct \TM\ $N$ which simulates $M$ on $N$'s own input $w$ but never writes a blank symbol over a nonblank symbol unless when $M$ accepts.
+	Reduce from $E_{\TM}$. To determine whether \TM\ $M$ accepts nothing, construct \TM\ $N$ which simulates $M$ on $N$'s own input $w$ but never writes a blank symbol over a nonblank symbol unless when $M$ accepts.
 	
 	%		5.13		%
 	\item[5.13]
-	Reduce to $E_{\TM}$. To determine whether \TM\ $M$ accepts nothing, construct \TM\ $N$ which simulates $M$ on $N$'s own input $w$ and obviously has no useless state except the one $q_{\RM{accept}}$.
+	Reduce from $E_{\TM}$. To determine whether \TM\ $M$ accepts nothing, construct \TM\ $N$ which simulates $M$ on $N$'s own input $w$ and obviously has no useless state except the one $q_{\RM{accept}}$.
 	
 	%		5.14		%
 	\item[5.14]
@@ -28,7 +28,7 @@
 	
 	%		5.15		%
 	\item[5.15]
-	Let $M'$ be $M$ after modifying all its transitions $\delta(q_i,a) = (q_{\RM{accept}},b,X)$ to $\delta(q_i,a) = (q_{\RM{reject}},b,X)$, and then modifying all $\delta(q_i,a) = (q_j,b,\RM{L})$ to $\delta(q_i,a) = (q_{\RM{accept}},b,\RM{R})$. The problem is now reduced to checking whether $M'$, as a \emph{\TM\ with stay put instead of left} described in problem 3.13, accepts $w$. It is easy since $L(M')$ is regular by the solution to problem 3.13.
+	Let $M'$ be $M$ after modifying all its transitions $\delta(q_i,a) = (q_{\RM{accept}},b,X)$ to $\delta(q_i,a) = (q_{\RM{reject}},b,X)$, and then modifying all $\delta(q_i,a) = (q_j,b,\RM{L})$ to $\delta(q_i,a) = (q_{\RM{accept}},b,\RM{R})$. The problem is now reduced to checking whether $M'$, as a \emph{\TM\ with stay put instead of left} described in Problem 3.13, accepts $w$. It is easy since $L(M')$ is regular by the solution to Problem 3.13.
 	
 	%		5.16		%
 	\item[5.16]
@@ -83,6 +83,10 @@
 	
 	%		5.25		%
 	\item[5.25]
-	$\overline{E_{\TM}} \Leqm A_{\TM}$ by problem 5.22 and it is well known that $A_{\TM} \Leqm E_{\TM}$. By the way, it is not difficult to construct an undecidable language $B$ such that $B =_{\RM{m}} \overline{B}$.
+	$\overline{E_{\TM}} \Leqm A_{\TM}$ by Problem 5.22 and it is well known that $A_{\TM} \Leqm E_{\TM}$. By the way, it is not difficult to construct an undecidable language $B$ such that $B =_{\RM{m}} \overline{B}$.
+	
+	%		5.28		%
+	\item[\Star 5.28]
+	\Omit
 	
 \end{itemize}
