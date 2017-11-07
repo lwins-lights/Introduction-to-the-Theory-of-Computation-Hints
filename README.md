@@ -18,7 +18,7 @@ We highly recommend you to see these hints as _last resort_, because you will _n
 * __Chapter 5: Reducibility__  
 	Problems unsolved yet: 5.14, 5.17, 5.18, 5.19, 5.20, 5.24, 5.26~5.36
 
-* __Chapter 6: Advanced Topics in Computability Theory__
+* __Chapter 6: Advanced Topics in Computability Theory__  
 	Problems unsolved yet: *6.16, 6.18, 6.20, 6.21, 6.22, 6.25, 6.27
 
 * Chapter 7
