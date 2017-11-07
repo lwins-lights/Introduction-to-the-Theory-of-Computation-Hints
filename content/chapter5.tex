@@ -85,8 +85,51 @@
 	\item[5.25]
 	$\overline{E_{\TM}} \Leqm A_{\TM}$ by Problem 5.22 and it is well known that $A_{\TM} \Leqm E_{\TM}$. By the way, it is not difficult to construct an undecidable language $B$ such that $B =_{\RM{m}} \overline{B}$.
 	
+	%		5.26		%
+	\item[5.26]
+	\Empty
+	
+	%		5.27		%
+	\item[5.27]
+	\Empty
+	
 	%		5.28		%
 	\item[\Star 5.28]
 	\Omit
+	
+	%		5.29		%
+	\item[5.29]
+	The case $P$ is not nontrivial is trivial. As for the second condition, let $P = \{ \Bra{M} \ | \ \TM\ M \text{ has $100$ states} \}$.
+	
+	%		5.30		%
+	\item[5.30]
+	Trivial.
+	
+	%		5.31		%
+	\item[5.31]
+	Let $M$ be a \TM\ which on input $\Bra{x}$ ($x \in \mathbb{Z}^+$) calculates $x, f(x), f(f(x)), \dots$ until it finds some $f^{(n)}(x)	= 1$, and then accepts. Let $N$ be a \TM\ uses $H$ to calculate whether $\Bra{M, x} \in A_{\TM}$ for $x = 1, 2, \dots$ in order, until it finds some $\Bra{M, x} \notin A_{\TM}$, and then accepts. We have the positive answer to the $3x + 1$ problem if and only if $\Bra{N, \TT{0}} \notin A_{\TM}$. 
+	
+	%		5.32		%
+	\item[5.32]
+	\begin{itemize}
+		\item[a.] As hinted, reduce from $PCP$.
+		\item[b.] Reduce from $OVERLAP_{\CFG}$ by constructing a grammar whose rules are $G$'s and $H$'s rules and $S \to S_G \TT{\$} \ | \ S_H \TT{\$\$}$, where $S_G$ and $S_H$ are $G$'s and $H$'s start variables.
+	\end{itemize}
+
+	%		5.33		%
+	\item[5.33]
+	\Empty
+	
+	%		5.34		%
+	\item[5.34]
+	\Empty
+	
+	%		5.35		%
+	\item[5.35]
+	\Empty
+	
+	%		5.36		%
+	\item[\Star 5.36]
+	See \url{https://cstheory.stackexchange.com/q/39407/46760} for two different solutions.
 	
 \end{itemize}
