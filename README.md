@@ -1,4 +1,4 @@
-# Introduction-to-the-Theory-of-Computation-Hints
+# Introduction-to-the-Theory-of-Computation-Hints (Solutions)
 
 This project is supposed to eliminate _all_ difficulties in solving problems in Michael Sipser's _Introduction to the Theory of Computation (3rd Edition)_. Generally speaking, it does not include those problem answered in the book.
 
