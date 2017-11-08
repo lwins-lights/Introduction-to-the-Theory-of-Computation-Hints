@@ -21,7 +21,9 @@ We highly recommend you to see these hints as _last resort_, because you will _n
 * __Chapter 6: Advanced Topics in Computability Theory__  
 	Problems unsolved yet: *6.16, 6.18, 6.20, 6.21, 6.22, 6.25, 6.27
 
-* Chapter 7
+* __Chapter 7: Time Complexity__  
+	Problems unsolved yet: 7.24, 7.26 ~ 7.54  
+	_Problem 7.20 seems to be pathological._
 
 * Chapter 8
 

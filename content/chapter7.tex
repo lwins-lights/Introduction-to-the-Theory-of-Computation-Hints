@@ -1,0 +1,78 @@
+\section{Time Complexity}
+
+\begin{itemize}
+	
+	%		7.13		%
+	\item[7.13]
+	$a^b = (a^{\lfloor b/2 \rfloor})^2 \cdot a^{b \bmod 2}$, where $a, b \in \mathbb{N}$.
+	
+	%		7.14		%
+	\item[7.14]
+	$q^t = (q^{\lfloor t/2 \rfloor})^2 \cdot q^{t \bmod 2}$, where $q \in S_k$ and $t \in \mathbb{N}$.
+	
+	%		7.15		%
+	\item[7.15] 
+	The hint in the textbook is sufficient.
+	
+	%		7.16		%
+	\item[7.16]
+	\Omit
+	
+	%		7.17		%
+	\item[7.17]
+	A brute-force algorithm for {\it UNARY-SSUM} is already in $\Poly$, due to the inefficiency of unary representation.
+	
+	%		7.18		%
+	\item[7.18]
+	First $A \in \Poly = \NPoly$. Then since there exist $x \in A$ and $y \notin A$, for an arbitrary language $B \in \NPoly = \Poly$, $f$ defined as follows is polynomial time computable.
+	$$
+		f(w) = 
+		\left\{
+			\begin{array}{ll}
+				x, & w \in B \\
+				y, & w \notin B
+			\end{array}
+		\right.
+	$$
+	
+	%		7.19		%
+	\item[\Star 7.19]
+	Let the certificate of $q \in \mathbb{P}$ consist of
+	\begin{itemize}
+		\item $g \in \mathbb{Z}_m^*$ such that $g^{m-1}=1$ and $g^{(m-1)/q} \neq 1$ for all prime $q \ | \ m-1$,
+		\item the standard factorization of $m-1 = \prod q_i^{r_i}$,
+		\item certificates of $q_i \in \mathbb{P}$.
+	\end{itemize} 
+
+	%		7.20		%
+	\item[7.20]
+	\Error
+	
+	%		7.21		%
+	\item[7.21]
+	\begin{itemize}
+		\item[a.] Modify the proof of $\textit{PATH} \in \Poly$.
+		\item[b.] Reduce from $\IT{UHAMPATH}$ by setting $k$ to the amount of nodes in $G$ minus $1$.
+	\end{itemize}
+
+	%		7.22		%
+	\item[7.22]
+	Reduce from $\IT{SAT}$. In order to determine whether $\Bra{\phi} \in \IT{SAT}$, construct $\phi' = \phi \,\wedge\,(z \vee \overline{z})$.
+	
+	%		7.23		%
+	\item[7.23]
+	\Omit
+	
+	%		7.24		%
+	\item[7.24]
+	\Empty
+	
+	%		7.25		%
+	\item[7.25]
+	Simply set every variables in $\phi$ to 1, except those ones that obviously have to take value $0$.
+	
+	%		7.26		%
+	\item[7.26]
+	\Empty
+	
+\end{itemize}
