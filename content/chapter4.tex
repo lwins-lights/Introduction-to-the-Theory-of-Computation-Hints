@@ -8,7 +8,7 @@
 	
 	%		4.11		%
 	\item[4.11]
-	By the pumping lemma, $L(M)$ is an infinite language $\iff$ $L(M)$ includes a string of length $p$. Since $R = \Sigma^p \Sigma^*$ is a regular language, it is easy to design a \PDA \ $P$ recognizing $L(M) \cap R$. Then use $E_{\PDA}$'s decider to decide whether $L(M) \cap R = \varnothing$.
+	By the pumping lemma, $L(M)$ is an infinite language $\iff$ $L(M)$ includes a string of at least length $p$. Since $R = \Sigma^p \Sigma^*$ is a regular language, it is easy to design a \PDA \ $P$ recognizing $L(M) \cap R$. Then use $E_{\PDA}$'s decider to decide whether $L(M) \cap R = \varnothing$.
 	
 	%		4.12		%
 	\item[4.12]
@@ -83,18 +83,18 @@
 	
 	%		4.29		%
 	\item[4.29]
-	\Empty
+	By the pumping lemma, $L(G)$ is an infinite language $\iff$ $L(G)$ includes a string of at least length $p$. So we can first use $\IT{INFINITE}_{\PDA}$ from Problem 4.11 to check whether $|L(G)| = \infty$, and then check whether $x \in L(G)$ for all $x$ of less-than-$p$ length, one by one.
 	
 	%		4.30		%
 	\item[4.30]
-	\Empty		
+	Let $E$ be $A$'s enumerator which generates $\Bra{M_1}, \Bra{M_2}, \dots$ in order. Construct $D = \{ \Bra{n} \ | \ \Bra{n} \notin L(M_n) \}$.
 	
 	%		4.31		%
 	\item[4.31]
-	\Empty
+	First, recursively determine whether $V \overset{*}{\Rightarrow} w$ with some $w \in \Sigma^*$, for all variables $V$. Then, recursively determine whether $V \overset{*}{\Rightarrow} xAy$ with some $x, y \in \Sigma^*$, for all variables $V$.
 	
 	%		4.32		%
 	\item[4.32]
-	\Empty
+	Construct \DPDA\ $P'_{(q,x)}$ by modifying $P$, such that $L(P'_{(q,x)}) = \varnothing$ if and only if $(q, x)$ is a looping situation for $P$. Then we only need $E_{\PDA}$.
 	
 \end{itemize}

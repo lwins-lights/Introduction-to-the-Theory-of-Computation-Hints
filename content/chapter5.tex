@@ -24,7 +24,7 @@
 	
 	%		5.14		%
 	\item[5.14]
-	\Empty
+	Reduce from $A_{\TM}$. To determine whether \TM\ $M$ accepts $w$, construct \TM\ $N$ which simulates $M$ on $N$'s own input $w$ but never attempts to move its head left when its head is on the left-most tape cell unless when $M$ accepts.
 	
 	%		5.15		%
 	\item[5.15]
@@ -32,23 +32,23 @@
 	
 	%		5.16		%
 	\item[5.16]
-	Suppose for the sake of contradiction that $BB$ is computable. Then obviously there exists a \TM\ $M$ having $k$ states, which writes $BB(n) + 1$ \TT{1}s on the tape, when given input $\Bra{n}$. Further, using $M$ we can construct a series of \TM s $M_n$ having exactly $k+n/2$ states, which writes $BB(n) + 1$ \TT{1}s on the tape when started with a blank tape. However, then $M_{2k}$, as a $2k$-state \TM , would write $BB(2k) + 1$ \TT{1}s. Absurd.
+	Suppose for the sake of contradiction that $\IT{BB}$ is computable. Then obviously there exists a \TM\ $M$ having $k$ states (let $k$ be sufficiently large), which writes $\IT{BB}(n) + 1$ \TT{1}s on the tape, when given input $\Bra{n}$. Further, using $M$ we can construct a series of \TM s $M_n$ having exactly $k+n/2$ states for large $n$, which writes $\IT{BB}(n) + 1$ \TT{1}s on the tape when started with a blank tape. However, then $M_{2k}$, as a $2k$-state \TM , would write $\IT{BB}(2k) + 1$ \TT{1}s. Absurd.
 	
 	%		5.17		%
 	\item[5.17]
-	\Empty
+	Obviously, in this case a PCP instance $P$ always has a match unless all dominos in $P$ have longer upper strings, or they all have longer lower strings.
 	
 	%		5.18		%
 	\item[5.18]
-	\Empty
+	Reduce from $\IT{PCP}$, since any string with finite alphabet can be encoded to a binary one.
 	
 	%		5.19		%
 	\item[5.19]
-	\Empty
+	Trivial.
 	
 	%		5.20		%
 	\item[5.20]
-	\Empty
+	We can encode any language to the one over the unary alphabet.
 	
 	%		5.21		%
 	\item[5.21]
@@ -79,7 +79,7 @@
 
 	%		5.24		%
 	\item[5.24]
-	\Empty
+	It immediately follows from $A_{\TM}, \overline{A_{\TM}} \Leqm J$.
 	
 	%		5.25		%
 	\item[5.25]
