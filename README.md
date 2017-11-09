@@ -12,7 +12,7 @@ We highly recommend you to see these hints as _last resort_, because you will _n
 
 * Chapter 3
 
-* __Chapter 4: Decidability__  $\checkmark$
+* __Chapter 4: Decidability__  [Done]
 
 * __Chapter 5: Reducibility__  
 	Problems unsolved yet: 5.26, 5.27, 5.33, 5.34, 5.35
