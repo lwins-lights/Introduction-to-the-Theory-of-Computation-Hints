@@ -4,7 +4,7 @@
 	
 	%		6.6			%
 	\item[6.6]
-	Let $M = P_{\Bra{N}}$ and $N$ print $\Bra{M} = q(\Bra{N})$.
+	Let $M = P_{\Bra{N}}$ and $N$ print $q(\Bra{N}) = \Bra{M}$.
 	
 	%		6.7			%
 	\item[6.7]
@@ -40,7 +40,7 @@
 	
 	%		6.15		%
 	\item[6.15]
-	Let $B = A_{\TM}^A = \{ \Bra{M^{A}, w} \ | \ \text{$M^A$ accepts $w$} \}$. Then apply any classical method used in proving undecidablity of $A_{\TM}$.
+	Let $B = A_{\TM^A} = \{ \Bra{M^{A}, w} \ | \ \text{$M^A$ accepts $w$} \}$. Then apply any classical method used in proving undecidablity of $A_{\TM}$.
 	
 	%		6.16		%
 	\item[\Star 6.16]
@@ -57,7 +57,7 @@
 	
 	%		6.18		%
 	\item[6.18]
-	\Empty
+	Suppose $L(M) \neq L(N)$, we can enumerate $x$ to find one such that $\Bra{M, x} \in A_{\TM} \oplus \Bra{N, x} \in A_{\TM}$ holds, where $\oplus$ means exclusive or.
 	
 	%		6.19		%
 	\item[6.19]
@@ -65,15 +65,15 @@
 	
 	%		6.20		%
 	\item[6.20]
-	\Empty
+	Let $M$ be $PCP$'s recognizer. Then check whether $\Bra{M, \Bra{P}} \in A_{\TM}$ to know if instance $P$ has a match.
 	
 	%		6.21		%
 	\item[6.21]
-	\Empty
+	Since $\K(x) \leq |x| + c$, we can check all possible minimal description $\Bra{M, w}$ to see if $M$ on input $w$ halts with $x$ on its tape by simulating $M$, where ``possible'' means that $|\Bra{M, w}| < |x| + c$ and $\Bra{M, w} \in A_{\TM}$.
 	
 	%		6.22		%
 	\item[6.22]
-	\Empty
+	Trivial.
 	
 	%		6.23		%
 	\item[6.23]
@@ -85,7 +85,7 @@
 	
 	%		6.25		%
 	\item[6.25]
-	\Empty
+	If not, there is an enumerator $E$ which would print infinite many incompressible strings one by one: $s_1, s_2, \dots$ By using $E$ we can construct \TM\ $M$, which prints an incompressible string $s_i$, such that $|s_i| > |\Bra{M, \TT{0}}|$, on its tape. Then we have $\K(s_i) \leq |\Bra{M, \TT{0}}| < |s_i|$. Absurd.
 	
 	%		6.26		%
 	\item[\Star 6.26] 
@@ -105,7 +105,7 @@
 	
 	%		6.27		%
 	\item[6.27]
-	\Empty
+	Show that $\overline{\IT{HALT}_{\TM}} \Leqm S, \overline{S}$.
 	
 	%		6.28		%
 	\item[6.28]
