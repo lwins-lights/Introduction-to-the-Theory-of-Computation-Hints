@@ -36,7 +36,7 @@
 	
 	%		5.17		%
 	\item[5.17]
-	Obviously, in this case a PCP instance $P$ always has a match unless all dominos in $P$ have longer upper strings, or they all have longer lower strings.
+	Obviously, in this case a PCP instance $P$ always has a match unless all dominos in $P$ have longer top strings, or they all have longer bottom strings.
 	
 	%		5.18		%
 	\item[5.18]
@@ -87,11 +87,11 @@
 	
 	%		5.26		%
 	\item[5.26]
-	\Empty
+	The idea is the same as how we deal with $A_{\LBA}$ and $E_{\LBA}$.
 	
 	%		5.27		%
 	\item[5.27]
-	\Empty
+	Prove that $A_{\TM} \Leqm E_{\textsf{2DIM-DFA}} \Leqm EQ_{\textsf{2DIM-DFA}}$, in which the former reduction can be done by computation history method.
 	
 	%		5.28		%
 	\item[\Star 5.28]
@@ -118,15 +118,19 @@
 
 	%		5.33		%
 	\item[5.33]
-	\Empty
+	Refer to the proof of undecidability of $ALL_{\CFG}$. Let $w = \TT{\#} C_1 \TT{\#} C_3 \TT{\#} C_5 \TT{\#} \cdots \TT{\#} C_6^\mathcal{R} \TT{\#} C_4^\mathcal{R} \TT{\#} C_2^\mathcal{R} \TT{\#}$.
 	
 	%		5.34		%
 	\item[5.34]
-	\Empty
+	Reduce from $A_{\TM}$. To determine whether \TM\ $N$ accepts $w$, construct \TM\ $M$ which simulates $N$ on $M$'s own input $w$ but never modifies the portion of the
+	tape that contains the input $w$ unless when $N$ accepts.
 	
 	%		5.35		%
 	\item[5.35]
-	\Empty
+	\begin{itemize}
+		\item[a.] Just enumerate $w$.
+		\item[b.] Reduce from $ALL_{\CFG}$. In order to determine wether $L(G) = \Sigma^*$, construct a grammar whose rules are $G$'s rules and $S \to S_G \ | \ T;\ T \to aT \ | \ \epsilon \ (a \in \Sigma)$, where $S_G$ are $G$'s start variable.
+	\end{itemize}
 	
 	%		5.36		%
 	\item[\Star 5.36]
