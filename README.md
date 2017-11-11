@@ -20,8 +20,7 @@ We highly recommend you to see these hints as _last resort_, because you will _n
 	Problems unsolved yet: *6.16
 
 * __Chapter 7: Time Complexity__  
-	Problems unsolved yet: 7.24 ~ 7.54  
-	_Problem 7.20 seems to be pathological._
+	Problems unsolved yet: 7.24 ~ 7.35, 7.41 ~ 7.54  
 
 * Chapter 8
 

@@ -20,7 +20,7 @@
 	
 	%		7.17		%
 	\item[7.17]
-	A brute-force algorithm for {\it UNARY-SSUM} is already in $\Poly$, due to the inefficiency of unary representation.
+	Use dynamic programming. Denote $dp[i][j] = \boldsymbol{1}\{ \Bra{\{x_1, \dots, x_i\}, j} \in \IT{SUBSET-SUM} \}$, where $\alpha \implies \boldsymbol{1}\{\alpha\} = 1$ and $\neg \alpha \implies \boldsymbol{1}\{\alpha\} = 0$.
 	
 	%		7.18		%
 	\item[7.18]
@@ -46,7 +46,7 @@
 
 	%		7.20		%
 	\item[7.20]
-	\Error
+	It follows from the result of Problem 7.18.
 	
 	%		7.21		%
 	\item[7.21]
@@ -63,20 +63,33 @@
 	\item[7.23]
 	\Omit
 	
-	%		7.24		%
-	\item[7.24]
-	\Empty
+	%		7.36		%
+	\item[\Star 7.36] 
+	Reduce from $\IT{3SAT}$. If there is no limitation on $\Sigma$, let the following \DFA\ correspond to an assignment to variables $x_1, x_2, \dots, x_n$ in 3cnf-formula $\phi$. You may need some extra states and transitions.
+	$$
+		\xymatrix@ur@R=2pc@C=2pc{
+			*+[o][F-]{\RM{S}} \ar@/^/[r]^{\{ \TT{x}_i | x_i = 1 \}} \ar@/_/[d]_{\{ \TT{x}_i | x_i = 0 \}} &
+			*+[o][F-]{T} \ar^{\TT{t}}[d] \ar^{\TT{f}}[l] \\
+			*+[o][F-]{F} \ar_{\TT{f}}[r] \ar_{\TT{t}}[u] & 
+			*+[o][F-]{A} \ar@(ur,rd)[]^{\Sigma}
+		}
+	$$
+	Once you solved the problem without regard to the limitation on $\Sigma$, based on your solution, consider how to build a reduction where $\Sigma = \{ \TT{0}, \TT{1} \}$.
 	
-	%		7.25		%
-	\item[7.25]
-	\Empty
+	%		7.37		%
+	\item[7.37]
+	Using the computation history as certificate we easily obtain $U \in \NPoly$. And it is easy to show that $\IT{3SAT} \LeqP U$, by designing an \NTM\ $M$, which accepts $\Bra{\phi}$ in polynomial time on at least one branch if and only if $\Bra{\phi} \in \IT{3SAT}$.
 	
-	%		7.26		%
-	\item[7.26]
-	\Empty
+	%		7.38		%
+	\item[\Star 7.38]
+	Let $\phi(x/t)$ denote the Boolean formula $\phi$ after replacing every existance of $x$ in $\phi$ with $t$. Suppose there are $n$ variables $x_1, \dots, x_n$ in $\phi$. $\Bra{\phi} \in \IT{SAT} \implies \Bra{\phi(x_1/0)} \in \IT{SAT} \text{ or } \Bra{\phi(x_1/1)} \in \IT{SAT}$, so we can directly assign $0$ or $1$ to $x_1$. Recursively assigning $x_2, \dots, x_n$ in this way we have done.
 	
-	%		7.27		%
-	\item[7.27] 
-	% The hint in the textbook is sufficient.	
+	%		7.39		%
+	\item[\Star 7.39]
+	Construct language $L = \{ \Bra{n, x, y} \ | \ \text{$n$ has a nontrivial factor in interval $[x, y]$} \}$, which is apparently in $\NPoly = \Poly$. Then refer to the solution to Problem 7.38.
+	
+	%		7.40		%
+	\item[\Star 7.40] 
+	\Omit
 	
 \end{itemize}
