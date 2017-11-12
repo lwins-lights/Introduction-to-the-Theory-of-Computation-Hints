@@ -44,7 +44,24 @@
 	
 	%		6.16		%
 	\item[\Star 6.16]
-	\Empty
+	\Attr{Kleene--Post} For convenience let any language $L$ be a subset of $\mathbb{N}$ instead of $\Sigma^*$. Denote $\{0, 1, \dots, m\}$ by $[m]$. Define 
+	$$
+		\mathcal{L}_m(A) = \{ L \subseteq \mathbb{N} \ | \ L \cap [m] = A\} \quad (A \subseteq [m])
+	$$
+	Let $M_0, M_1, M_2, \dots$ be all possible oracle \TM s. We will give two series of families of languages $\mathcal{A}_0 \supseteq \mathcal{A}_1 \supseteq \mathcal{A}_2 \supseteq \cdots$ and $\mathcal{B}_0 \supseteq \mathcal{B}_1 \supseteq \mathcal{B}_2 \supseteq \cdots$ such that
+	$$
+		\forall A \in \mathcal{A}_n, B \in \mathcal{B}_n,\ M_n^A \text{ is not $B$'s decider} \text{ and } M_n^B \text{ is not $A$'s decider}.
+	$$
+	Then taking arbitrary $A \in \mathcal{A} = \bigcap_{n \in \mathbb{N}} \mathcal{A}_n$ and $B \in \mathcal{B} = \bigcap_{n \in \mathbb{N}} \mathcal{B}_n$ we have $A \nleq_{\RM{T}} B$ and $B \nleq_{\RM{T}} A$. We build them by induction. Given $\mathcal{A}_{n-1} = \mathcal{L}_m(X)$ and $\mathcal{B}_{n-1} = \mathcal{L}_m(Y)$, we first find $\mathcal{A}'_n \subseteq \mathcal{A}_{n-1}$ and $\mathcal{B}'_n \subseteq \mathcal{B}_{n-1}$ such that $\forall A \in \mathcal{A}'_n, B \in \mathcal{B}'_n,\ M_n^A \text{ is not $B$'s decider}$.
+	\begin{itemize}
+		\item If there is no $A \in \mathcal{A}_{n-1}$ such that $M_n^A$ is a decider, let $\mathcal{A}'_n = \mathcal{A}_{n-1}$ and $\mathcal{B}'_n = \mathcal{B}_{n-1}$.
+		\item Suppose $M_n^A$ is a decider with some $A \in \mathcal{A}_{n-1}$, then there exists an $m'>m$ such that 
+		$$
+			\forall A' \in \mathcal{L}_{m'}(A \cap [m']),\ m+1 \in L(M_n^A) \iff m+1 \in L(M_n^{A'}).
+		$$
+		Then, let $\mathcal{A}'_n = \mathcal{L}_{m'}(A \cap [m'])$, $\mathcal{B}'_n = \mathcal{L}_{m'}(Y)$ or $\mathcal{L}_{m'}(Y \cup \{m+1\})$, depending on whether $m+1 \in L(M_n^A)$.
+	\end{itemize}
+	The same method can be also used to find $\mathcal{A}_n \subseteq \mathcal{A}'_{n}$ and $\mathcal{B}_n \subseteq \mathcal{B}'_{n}$ such that $\forall A \in \mathcal{A}_n, B \in \mathcal{B}_n,\ M_n^B $ is not $A$'s decider.
 	
 	%		6.17		%
 	\item[\Star 6.17]
@@ -99,7 +116,7 @@
 	$$
 	Letting $k \to +\infty$ we obtain that $f_n \leq 2^c$ for all $n$. However, there is a \TM\ $M$ which on input $\Bra{p, q}$ ($p, q \in \mathbb{N}$ and $q < 2^{2^p}$) halts with $r(p,q)$, a $2^p$-bits binary representation of $q$, on its tape. So $\K(r(p,q)) \leq 2 \log_2 p + \log_2 q + d$ with some constant $d$. Then, if $n = 2^p$ for some large $p$,
 	$$
-		f_{n} = \sum_{|x|=n} {2^{-\K(x)}} \geq \sum_{q < 2^n} {2^{-\K(r(p,q))}} \geq 2^{-2 \log_2 p - d} \sum_{q < 2^n} \frac{1}{q} \geq \frac{n}{2^d (\log n)^2},
+		f_{n} = \sum_{|x|=n} {2^{-\K(x)}} \geq \sum_{q < 2^n} {2^{-\K(r(p,q))}} \geq 2^{-2 \log_2 p - d} \sum_{q < 2^n} \frac{1}{q} \geq \frac{n}{2^d (\log_2 n)^2},
 	$$
 	which apparently contradicts with $f_n \leq 2^c$.
 	
