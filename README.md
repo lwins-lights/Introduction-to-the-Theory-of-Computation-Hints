@@ -30,7 +30,7 @@ Any solution having essentially difference with existing ones would be quite val
 * __Chapter 6: Advanced Topics in Computability Theory__  _[Done]_
 
 * __Chapter 7: Time Complexity__  
-	Problems unsolved yet: 7.24 ~ 7.35, 7.47 ~ 7.54  
+	Problems unsolved yet: 7.24 ~ 7.35, *7.49, *7.52, *7.53, 7.54  
 
 * Chapter 8
 
