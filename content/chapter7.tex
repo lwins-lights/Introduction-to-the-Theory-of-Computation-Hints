@@ -135,4 +135,47 @@
 	\item[7.46]
 	Since $P$ is closed under complement, we only need to show that $\overline{\IT{MIN-FORMULA}} \in \NPoly = \Poly$. It is easy to do because $\IT{SAT} \in \NPoly = \Poly$, and then the certicifate for $\Bra{\phi} \in \overline{\IT{MIN-FORMULA}}$ can be $\Bra{\phi'}$ such that $|\phi'| < |\phi|$ and they are equivalent.
 	
+	%		7.47		%
+	\item[7.47]
+	$Z = \{ \Bra{G_1, k_1, G_2, k_2} \ | \ \Bra{G_1, k_1} \in \IT{CLIQUE} \} - \{ \Bra{G_1, k_1, G_2, k_2} \ | \ \Bra{G_2, k_2} \in \IT{CLIQUE} \} $.
+	
+	%		7.48		%
+	\item[\Star 7.48]
+	Obviously $\IT{MAX-CLIQUE} \in \RM{DP}$. Suppose there is a graph $G = (V, E)$ with $V = \{v_1, v_2, \dots, v_n \}$. Denote $[n] = \{1, 2, \dots, n\}$. Let $G_+ = (V_+, E_+)$, where
+	$$
+		\left\{
+			\begin{array}{l}
+				\displaystyle
+				V_+ = \{ (i, v_j) \ | \ i \in [n + 1],\ v_j \in V \} \cup \{ (i, \alpha) \ | \ i \in [n+1] - [k] \} \\
+				E_+ = \{ \{ (i, u), (j, v) \} \ | \ i \neq j,\ \{u, v\} \in E \} \cup \{ \{ (i, \alpha), (j, v) \} \ | \ i \neq j,\ v \in V \cup \{\alpha\} \}
+			\end{array}
+		\right.
+	$$
+	Then $\Bra{G, k} \in \IT{CLIQUE} \iff \Bra{G_+, n+1} \in \IT{MAX-CLIQUE}$. Let $G_-$ consist of $G_+$ and a $n$-clique (i.e., complete graph $K_n$). Then $\Bra{G, k} \notin \IT{CLIQUE} \iff \Bra{G_-, n} \in \IT{MAX-CLIQUE}$. Try to build a reduction by taking advantage of $G_+$ and $G_-$.
+	% And we show that $Z \leq_{\RM{T}}^{\Poly} \IT{MAX-CLIQUE}$, where $Z$ is defined in Problem 7.47. To determine whether $\Bra{G_1, k_1, G_2, k_2} \in Z$, we first use the oracle for $\IT{MAX-CLIQUE}$ repeatedly to find the size of largest clique in $G_1$ and $G_2$, denoted as $l_1$ and $l_2$ respectively. Then $\Bra{G_1, k_1, G_2, k_2} \in Z \iff k_1 \leq l_1,\ k_2 > l_2$.
+	
+	%		7.49		%
+	\item[\Star 7.49]
+	\Empty
+	
+	%		7.50		%
+	\item[\Star 7.50] 
+	$\overline{EQ_{\textsf{SF-REX}}} = \{ \Bra{R, S} \ | \ \exists c,\ c \in L(R) \oplus c \in L(S) \}$. Determining whether $c \in L(R)$ can be achieved in (deterministic) polynomial time by constructing a corresponding \NFA . Note that any $c \in L(R)$ for a star-free \REX\ satisfies $|c| \leq \RM{Poly}(|R|)$.
+	
+	%		7.51		%
+	\item[\Star 7.51] 
+	Trivial.
+	
+	%		7.52		%
+	\item[\Star 7.52]
+	\Empty
+	
+	%		7.53		%
+	\item[\Star 7.53]
+	\Empty
+	
+	%		7.54		%
+	\item[7.54]
+	\Empty
+	
 \end{itemize}
