@@ -1,0 +1,68 @@
+\section{Space Complexity}
+
+\begin{itemize}
+	
+	%		8.8			%
+	\item[8.8]
+	For arbitrary $R$ and $S$, we can build an \NFA\ $N$ such that $L(N) = \overline{L(R) \oplus L(S)}$, where $\oplus$ means symmetry difference. Therefore it is reduced to $ALL_{\NFA}$ in Example 8.4.
+	
+	%		8.9			%
+	\item[8.9]
+	Build an \NTM\ which nondeterministically guesses a ladder $s, s_2, \dots, s_k$ and verifies whether $s_k = t$, where $k$ is obviously bounded in $2^{\mathcal{O}(|s|)}$. Then $\IT{LADDER}_{\DFA} \in \NPSPACE = \PSPACE$ follows.
+	
+	%		8.10		%
+	\item[8.10]
+	It can be reduced to $\IT{FORMULA-GAME}$ directly.
+	
+	%		8.11		%
+	\item[8.11]
+	If so, $\IT{SAT}$ is \PSPACE -hard, thus it is \PSPACE -complete.
+	
+	%		8.12		%
+	\item[8.12]
+	It is because $\phi_{c_1, c_2, 1}$ in the proof of Theorem 8.9 can be written in conjunctive normal form, as we see in the proof of Theorem 7.37 (Cook--Levin theorem).
+	
+	%		8.13		%
+	\item[8.13]
+	Reduce from $\IT{TQBF}$. Clearly we can construct a $g(n) = n^{100}+10^{100}$ space \TM\ $M$ deciding $\IT{TQBF}$. Build mapping $f(\Bra{\phi}) = \Bra{M', \Bra{\phi}\TT{\$0}^{g(|\Bra{\phi}|)}}$, where \LBA\ $M'$ does almost the same as $M$ does.
+	
+	%		8.14		%
+	\item[\Star 8.14]
+	For any $\Bra{G, c, m, h}$, here is a polynomial time algorithm. Let $C[i][j] = +1$ or $-1$ stand for that we can determine $\Bra{G, i, j, h} \in \IT{HAPPY-CAT}$ or $\Bra{G, i, j, h} \in \IT{HAPPY-MOUSE}$. Similarly let $M[i][j] = +1$ or $-1$ stand for that we can determine $\Bra{G, i, j, h} \in \IT{HAPPY-MOUSE'}$ or $\Bra{G, i, j, h} \in \IT{HAPPY-CAT'}$, where $\IT{HAPPY-CAT'}$ is defined like $\IT{HAPPY-CAT}$, except that Mouse moves first. Now we set $M[i][i] = -1$ and $C[i][h] = -1$ for all $i \in G$. Then, repeatedly assign new value to $M$ and $C$ according to the following rules until we get nothing more from the rules.
+	$$
+		\left\{
+			\begin{array}{ll}
+				C[i][j] = -1, & \forall i' \in N(i),\ M[i'][j] = +1 \\
+				C[i][j] = +1, & \exists i' \in N(i),\ M[i'][j] = -1 \\
+				M[i][j] = -1, & \forall j' \in N(j),\ C[i][j'] = +1 \\
+				M[i][j] = +1, & \exists j' \in N(j),\ C[i][j'] = -1
+			\end{array}
+		\right.
+	$$
+	where $N(v)$ stands for the collection of all nodes adjacent to $v$ in $G$. After this calculation, we claim that $\Bra{G, c, m, h} \in \IT{HAPPY-CAT} \iff C[c][m] = +1$. The proof of correctness of the algorithm is not evident but also not hard.
+	
+	%		8.15		%
+	\item[8.15]
+	\Empty
+	
+	%		8.16		%
+	\item[8.16]
+	\Empty
+	
+	%		8.17		%
+	\item[8.17]
+	A left-to-right scan with memorizing the amount of non-matched \TT{(}s is enough.
+	
+	%		8.18		%
+	\item[\Star 8.18] 
+	Let $h$ be a homomorphism that maps brackets to parentheses, e.g., $h(\TT{([)][]}) = \TT{(())()}$. Denote the substring of $w$ from the $i$-th character to the $j$-th character as $w_{[i,j]}$ and $w_i = w_{[i,i]}$. Then, $w \in B$ if and only if
+	\begin{itemize}
+		\item $h(w) \in A$, where $A$ is defined in Problem 8.17.
+		\item $w_i$ matches $w_j$ whenever $h(w_{[i+1,j-1]}) \in A$, for all $1 \leq i \leq j \leq |w|$.
+	\end{itemize}
+
+	%		8.19		%
+	\item[\Star 8.19] 
+	It is trivial, if we follow the classical definition of Nim. \emph{In the classical definition, the player who cannot remove sticks loses.}
+	
+\end{itemize}
