@@ -52,12 +52,12 @@
 	\item[7.21]
 	\begin{itemize}
 		\item[a.] Modify the proof of $\textit{PATH} \in \Poly$.
-		\item[b.] Reduce from $\IT{UHAMPATH}$ by setting $k$ to the amount of nodes in $G$ minus $1$.
+		\item[b.] It is in $\NPoly$ evidently. For the other side, reduce from $\IT{UHAMPATH}$ by setting $k$ to the amount of nodes in $G$ minus $1$.
 	\end{itemize}
 
 	%		7.22		%
 	\item[7.22]
-	Reduce from $\IT{SAT}$. In order to determine whether $\Bra{\phi} \in \IT{SAT}$, construct $\phi' = \phi \,\wedge\,(z \vee \overline{z})$.
+	It is in $\NPoly$ evidently. For the other side, reduce from $\IT{SAT}$. In order to determine whether $\Bra{\phi} \in \IT{SAT}$, construct $\phi' = \phi \,\wedge\,(z \vee \overline{z})$.
 	
 	%		7.23		%
 	\item[7.23]
@@ -65,7 +65,7 @@
 	
 	%		7.36		%
 	\item[\Star 7.36] 
-	Reduce from $\IT{3SAT}$. If there is no limitation on $\Sigma$, let the following \DFA\ correspond to an assignment to variables $x_1, x_2, \dots, x_n$ in 3cnf-formula $\phi$. You may need some extra states and transitions.
+	It is in $\NPoly$ evidently. For the other side, reduce from $\IT{3SAT}$. If there is no limitation on $\Sigma$, let the following \DFA\ correspond to an assignment to variables $x_1, x_2, \dots, x_n$ in 3cnf-formula $\phi$. You may need some extra states and transitions.
 	$$
 		\xymatrix@ur@R=2pc@C=2pc{
 			*+[o][F-]{\RM{S}} \ar@/^/[r]^{\{ \TT{x}_i | x_i = 1 \}} \ar@/_/[d]_{\{ \TT{x}_i | x_i = 0 \}} &

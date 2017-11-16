@@ -4,7 +4,7 @@
 	
 	%		8.8			%
 	\item[8.8]
-	For arbitrary $R$ and $S$, we can build an \NFA\ $N$ such that $L(N) = \overline{L(R) \oplus L(S)}$, where $\oplus$ means symmetry difference. Therefore it is reduced to $ALL_{\NFA}$ in Example 8.4.
+	Refer to Example 8.4.
 	
 	%		8.9			%
 	\item[8.9]
@@ -24,7 +24,7 @@
 	
 	%		8.13		%
 	\item[8.13]
-	Reduce from $\IT{TQBF}$. Clearly we can construct a $g(n) = n^{100}+10^{100}$ space \TM\ $M$ deciding $\IT{TQBF}$. Build mapping $f(\Bra{\phi}) = \Bra{M', \Bra{\phi}\TT{\$0}^{g(|\Bra{\phi}|)}}$, where \LBA\ $M'$ does almost the same as $M$ does.
+	Reduce from $\IT{TQBF}$. Clearly we can construct a $g(n) = n^{100}+10^{100}$ space \TM\ $M$ deciding $\IT{TQBF}$. Build mapping $f(\Bra{\phi}) = \Bra{M', \Bra{\phi}\TT{\$0}^{g(|\Bra{\phi}|)}}$, where \LBA\ $M'$ does almost the same as $M$ does. On the other side, obviously $A_{\LBA} \in \PSPACE$.
 	
 	%		8.14		%
 	\item[\Star 8.14]
@@ -63,6 +63,82 @@
 
 	%		8.19		%
 	\item[\Star 8.19] 
-	It is trivial, if we follow the classical definition of Nim. \emph{In the classical definition, the player who cannot remove sticks loses.}
+	It is a classical problem. See \url{https://en.wikipedia.org/wiki/Nim}. 
+	
+	%		8.20		%
+	\item[8.20]
+	\Empty
+	
+	%		8.21		%
+	\item[8.21]
+	\Empty
+	
+	%		8.22		%
+	\item[8.22]
+	\Empty
+	
+	%		8.23		%
+	\item[\Star 8.23]
+	Suppose $G = (V, E)$ has $n$ nodes named $v_0, v_1, \dots, v_{n-1}$ and define $v_k = v_{k \bmod n}$. Consider the sequence consisting of \emph{directed} edges in $G$, by seeing an undirected edge as two directed ones: $w_0, w_1, w_2, \dots$, where
+	$$
+		w_{m+1} = (v_j, v_k) \text{, if $w_m = (v_i, v_j)$ and $\{v_j, v_{i+1}\}, \{v_j, v_{i+2}\}, \dots, \{v_j, v_{k-1}\} \notin E$.}
+	$$
+	$G$ contains no cycle if and only if for every $w_0 = (u, v)$, the first $w_r$ in the sequence such that $w_r = (\cdot, u)$ is $(v, u)$. You may assume $G$ is connected without loss of generality and then use mathematical induction on $n$ to prove this. Note that the sequence $w_0, w_1, w_2, \dots$ would traverse every edges in $G$, i.e., perform depth-first search, if $G$ is a tree.
+	
+	%		8.24		%
+	\item[\Star 8.24]
+	See \url{https://math.stackexchange.com/a/79031/134950}.
+	
+	%		8.25		%
+	\item[8.25]
+	Surely $\IT{BIPARTITE} \in \RM{coNL} = \RM{NL}$, since we can guess a odd cycle, whose length is no more than $n$, to verify $\Bra{G} \notin \IT{BIPARTITE}$.
+	
+	%		8.26		%
+	\item[8.26]
+	Here is a sample which shows how to do reduction.
+	\begin{gather*}
+		\xymatrix@ur@R=1pc@C=1pc{
+			*+[o][F-]{1} \ar@{-}[d] \ar@{-}[r] & *+[o][F-]{2} & \\
+			*+[o][F-]{3} & *+[o][F-]{4} \ar@{-}[u] \ar@{-}[l] \ar@{-}[rd] & \\
+			& & *+[o][F-]{5}
+			% *+[o][F-]{\RM{S}} \ar@/^/[r]^{\{ \TT{x}_i | x_i = 1 \}} \ar@/_/[d]_{\{ \TT{x}_i | x_i = 0 \}} &
+			% *+[o][F-]{T} \ar^{\TT{t}}[d] \ar^{\TT{f}}[l] \\
+			% *+[o][F-]{F} \ar_{\TT{f}}[r] \ar_{\TT{t}}[u] & 
+			% *+[o][F-]{A} \ar@(ur,rd)[]^{\Sigma}
+		}
+		\scalebox{1.5}{$\qquad \implies$} \\
+		\xymatrix@R=1.5pc@C=0.5pc{
+			&&&&&&&&&&&& 
+			*+[o][F-]{S} 
+			\ar@{-}@(l,u)[dllllllllllll]
+			\ar@{-}@(ld,ur)[dllllll]
+			\ar@{-}[d]
+			\ar@{-}@(rd,ul)[drrrrrr]
+			\ar@{-}@(r,u)[drrrrrrrrrrrr]
+			&&&&&&&&&&&& \\
+			*+[o][F-]{1} \ar@{-}[rd] \ar@{-}[rrd] & *+[o][F-]{2} \ar@{-}[dl] \ar@{-}[drr] & *+[o][F-]{3} \ar@{-}[dll] \ar@{-}[dr] & *+[o][F-]{4} \ar@{-}[dl] \ar@{-}[dll] \ar@{-}[dr] & *+[o][F-]{5} \ar@{-}[dl] &
+			*+[o][F-]{1} \ar@{-}[rd] \ar@{-}[rrd] & *+[o][F-]{2} \ar@{-}[dl] \ar@{-}[drr] & *+[o][F-]{3} \ar@{-}[dll] \ar@{-}[dr] & *+[o][F-]{4} \ar@{-}[dl] \ar@{-}[dll] \ar@{-}[dr] & *+[o][F-]{5} \ar@{-}[dl] &
+			*+[o][F-]{1} \ar@{-}[rd] \ar@{-}[rrd] & *+[o][F-]{2} \ar@{-}[dl] \ar@{-}[drr] & *+[o][F-]{3} \ar@{-}[dll] \ar@{-}[dr] & *+[o][F-]{4} \ar@{-}[dl] \ar@{-}[dll] \ar@{-}[dr] & *+[o][F-]{5} \ar@{-}[dl] &
+			*+[o][F-]{1} \ar@{-}[rd] \ar@{-}[rrd] & *+[o][F-]{2} \ar@{-}[dl] \ar@{-}[drr] & *+[o][F-]{3} \ar@{-}[dll] \ar@{-}[dr] & *+[o][F-]{4} \ar@{-}[dl] \ar@{-}[dll] \ar@{-}[dr] & *+[o][F-]{5} \ar@{-}[dl] &
+			*+[o][F-]{1} \ar@{-}[rd] \ar@{-}[rrd] & *+[o][F-]{2} \ar@{-}[dl] \ar@{-}[drr] & *+[o][F-]{3} \ar@{-}[dll] \ar@{-}[dr] & *+[o][F-]{4} \ar@{-}[dl] \ar@{-}[dll] \ar@{-}[dr] & *+[o][F-]{5} \ar@{-}[dl] \\
+			*+[o][F-]{1} & *+[o][F-]{2} & *+[o][F-]{3} & *+[o][F-]{4} & *+[o][F-]{5} &
+			*+[o][F-]{1} & *+[o][F-]{2} & *+[o][F-]{3} & *+[o][F-]{4} & *+[o][F-]{5} &
+			*+[o][F-]{1} & *+[o][F-]{2} & *+[o][F-]{3} & *+[o][F-]{4} & *+[o][F-]{5} &
+			*+[o][F-]{1} & *+[o][F-]{2} & *+[o][F-]{3} & *+[o][F-]{4} & *+[o][F-]{5} &
+			*+[o][F-]{1} & *+[o][F-]{2} & *+[o][F-]{3} & *+[o][F-]{4} & *+[o][F-]{5} \\
+			&&&&&&&&&&&& 
+			*+[o][F-]{T} 
+			\ar@{-}@(l,d)[ullllllllllll]
+			\ar@{-}@(lu,dr)[ullllll]
+			\ar@{-}[u]
+			\ar@{-}@(ru,dl)[urrrrrr]
+			\ar@{-}@(r,d)[urrrrrrrrrrrr]
+			&&&&&&&&&&&&
+		}
+	\end{gather*}
+	
+	%		8.27		%
+	\item[8.27]
+	Reduce from $\IT{PATH}$. In order to determine whether a path from $s$ to $t$ exists in graph $G = (V, E)$, we add some edges $(v, s)$ and $(t, v)$ for all $v \in V$ to obtain a modified graph $G'$. Then a path exists if and only if $G'$ is strongly connected. On the other side, it is obviously in $\RM{NL}$.
 	
 \end{itemize}
