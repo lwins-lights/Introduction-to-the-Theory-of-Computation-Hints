@@ -37,7 +37,8 @@ Any solution having essentially difference with existing ones would be quite val
 * __Chapter 8: Space Complexity__  
 	Problems unsolved yet: 8.15, 8.16, 8.20 ~ 8.22, 8.28 ~ 8.30, 8.32
 
-* Chapter 9
+* __Chapter 9: Intractability__  
+	Problems unsolved yet: 9.20, 9.23
 
 * Chapter 10
 

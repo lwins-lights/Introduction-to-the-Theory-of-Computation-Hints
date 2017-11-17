@@ -1,0 +1,69 @@
+\section{Intractability}
+
+\begin{itemize}
+	
+	%		9.12		%
+	\item[9.12]
+	$\IT{SAT} \in \RM{TIME}(n^k)$ cannot implies $\NPoly \subseteq \RM{TIME}(n^k)$.
+	
+	%		9.13		%
+	\item[9.13]
+	Trivial. 
+	
+	%		9.14		%
+	\item[9.14]
+	Note that $A \in \RM{NTIME}(2^{n^k}) \implies pad(A, 2^{n^k}) \in \NPoly$, and $pad(A, 2^{n^k}) \in \Poly \implies A \in \RM{TIME}(2^{n^{k+1}})$.
+	
+	%		9.15		%
+	\item[9.15]
+	\Omit
+	
+	%		9.16		%
+	\item[9.16]
+	The proof of Theorem 8.9 shows that a language $L \in \RM{SPACE}(f(n))$ can be reduced to the $\IT{TQBF}$ problem with a log space reduction $h$ such that $|h(w)| = \BigO(f(|w|)^2)$. Letting $f(n) = n^3$ we will get $L \in \RM{SPACE}(((n^3)^2)^{1/3}) = \RM{SPACE}(n^2)$, thus $\RM{SPACE}(n^3) \subseteq \RM{SPACE}(n^2)$ if $\IT{TQBF} \in \RM{SPACE}(n^{1/3})$. Absurd. 
+	
+	%		9.17		%
+	\item[\Star 9.17]
+	Let $n$ denote the length of input string for a certain $\mathsf{2DFA}$ $D$. There is a \TM\ using $\BigO(n^2)$ time to decide the language $L(D)$ since $D$ has at most $\BigO(n^2)$ configurations.
+	
+	%		9.18		%
+	\item[9.18]
+	Let $E(R)$ stand for $\Bra{R} \in E_{\REX \uparrow}$. Then,
+	\begin{itemize}
+		\item $E(RS) \iff E(R) \wedge E(S)$,
+		\item $E(R \cup S) \iff E(R) \wedge E(S)$,
+		\item $E(R^*) \iff E(R)$.
+	\end{itemize}
+
+	%		9.19		%
+	\item[9.19]
+	Refer to the solution to Problem 7.38.
+	
+	%		9.20		%
+	\item[9.20]
+	\Empty
+	
+	%		9.21		%
+	\item[9.21]
+	\begin{itemize}
+		\item[a.] Trivial, since $\IT{SAT}$ is $\NPoly$-complete and $\overline{\IT{SAT}}$ is co$\NPoly$-complete.
+		\item[b.] If so, let $J = \TT{0} \IT{SAT} \cup \TT{1} \overline{\IT{SAT}}$. We have $\IT{SAT}, \overline{\IT{SAT}} \LeqP J \in \Poly^{\IT{SAT},1}$.
+	\end{itemize}
+
+	%		9.22		%
+	\item[9.22]
+	We query $A$ and $B$ for the value of $\phi = \exists x_1 \forall x_2 \exists x_3 \dots [\psi]$. If they do not agree with each other, let them play the formula game on $\phi$, after which we adopt the winner's opinion.
+	
+	%		9.23		%
+	\item[9.23]
+	\Empty
+	
+	%		9.24		%
+	\item[9.24]
+	Refer to Problem 9.25.
+	
+	%		9.25		%
+	\item[\Star 9.25]
+	You already have an $\BigO(n)$ one, if following the hint given in Problem 9.24b.
+	
+\end{itemize}
