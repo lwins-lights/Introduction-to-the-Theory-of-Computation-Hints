@@ -182,11 +182,11 @@
 	
 	%		8.33		%
 	\item[\Star 8.33] 
-	In other words, you are asked to find an $\RM{NL}$-complete language $A$ and a context-free language $B$ such that $A \equiv_{\RM{L}} B$. We choose $A = \IT{PATH}$ and $\{\TT{0}, \TT{1}\}^* \supseteq B = f(A)$, in which $f: A \to B$ is defined as follows.
+	In other words, you are asked to find an $\RM{NL}$-complete language $A$ and a context-free language $B$ such that $A \equiv_{\RM{L}} B$. We choose $A = \IT{PATH}$ and $\{\TT{0}, \TT{1}, \TT{\#}\}^* \supseteq B = f(A)$, in which $f: A \to B$ is defined as follows.
 	$$
-		f(\Bra{G, s, t}) = \Bra{s}(\Bra{e_1} \Bra{e_2} \cdots \Bra{e_m} )^n\Bra{t}^{\mathcal{R}},
+		f(\Bra{G, s, t}) = \Bra{s}^{\mathcal{R}}(\TT{\#} \Bra{e_1} \Bra{e_2} \cdots \Bra{e_m} \TT{\#} )^n\Bra{t},
 	$$
-	where $G = (V, E)$, $|V| = n$, $E = \{e_1, \dots, e_m\}$, $\Bra{e_i} = \Bra{u_i}\Bra{v_i}^{\mathcal{R}}$ if $e_i = (u_i, v_i)$.
+	where $G = (V, E)$, $|V| = n$, $E = \{e_1, \dots, e_m\}$, $\Bra{e_i} = \TT{\#} \Bra{u_i}\TT{\#}\Bra{v_i}^{\mathcal{R}}\TT{\#}$ if $e_i = (u_i, v_i)$.
 	
 	%		8.34		%
 	\item[\Star 8.34] 
