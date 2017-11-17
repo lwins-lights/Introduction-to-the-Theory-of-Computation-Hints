@@ -87,7 +87,22 @@
 	
 	%		8.24		%
 	\item[\Star 8.24]
-	See \url{https://math.stackexchange.com/a/79031/134950}.
+	\Sol{1}
+		Let $N_i^{(n)}$ be an \NFA\ given as follows, with $\Sigma = \{\TT{x}_1, \dots, \TT{x}_n\}$.
+		$$
+			\xymatrix@R=3pc@C=2pc{
+				& *+<1pc>[o][F=]{D} \ar@(lu,ru)[]^{\Sigma} & \\
+				*+<1pc>[o][F=]{0} \ar@(l,l)[]^{} \ar@(ld,rd)[]_{\{ \TT{x}_j | j < i \}} \ar@/_/[rr]_{\TT{x}_i} \ar[ru]^{\{ \TT{x}_j | j > i \}} && 
+				*+<1pc>[o][F-]{1} \ar@(ld,rd)[]_{\{ \TT{x}_j | j < i \}} \ar[lu]_{\TT{x}_i} \ar@/_/[ll]_{\{ \TT{x}_j | j > i \}}			
+				%*+<1pc>[o][F=]{D} \ar@(ld,rd)[]_{\Sigma}& 
+				%*+<1pc>[o][F=]{0} \ar@(lu,lu)[]^{} \ar@(ld,rd)[]_{\{ \TT{x}_j | j < i \}} \ar@/_/[r]_{\TT{x}_i} \ar[l]^{\{ \TT{x}_j | j > i \}} & 
+				%*+<1pc>[o][F-]{1} \ar@(ld,rd)[]_{\{ \TT{x}_j | j < i \}} \ar@/_1pc/[ll]_{\TT{x}_i} \ar@/_/[l]
+			}
+		$$
+		Denote its corresponding regular expression as $R_i^{(n)}$. Then the shortest string which is not in $R_1^{(n)} \cup R_2^{(n)} \cup \cdots \cup R_n^{(n)}$ is $\TT{x}_1 \TT{x}_2 \TT{x}_1 \TT{x}_3 \TT{x}_1 \TT{x}_2 \TT{x}_1 \TT{x}_4 \TT{x}_1 \TT{x}_2 \TT{x}_1 \TT{x}_3 \TT{x}_1 \TT{x}_2 \TT{x}_1 \cdots \TT{x}_n \cdots \TT{x}_1 \TT{x}_2 \TT{x}_1 \TT{x}_3 \TT{x}_1 \TT{x}_2 \TT{x}_1$, which is of length $2^{n}-1$.
+		
+	\Sol{2}
+		See \url{https://math.stackexchange.com/a/79031/134950} for a simpler solution involving number theory.
 	
 	%		8.25		%
 	\item[8.25]

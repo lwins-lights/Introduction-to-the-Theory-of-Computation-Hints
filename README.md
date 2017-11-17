@@ -12,8 +12,10 @@ Any solution having essentially difference with existing ones would be quite val
 
 * Once you make some contribution to this project, you can add your name or pseudonym to the author list.
 
-* You can claim the ownership of your solution by using pre-defined command `\Attr{[your name]}`. 
+* You can claim the ownership of your solution by using pre-defined command `\Attr{[your name]}` (refer to Problem 6.16). 
 	If it is not an original solution, you must use this to indicate whom the solution is attributed to.
+	
+* Use command `\Sol{}` for the case there are mutiple solutions for a same problem (refer to Problem 8.24).
 
 ## Progress
 

@@ -68,7 +68,7 @@
 	It is in $\NPoly$ evidently. For the other side, reduce from $\IT{3SAT}$. If there is no limitation on $\Sigma$, let the following \DFA\ correspond to an assignment to variables $x_1, x_2, \dots, x_n$ in 3cnf-formula $\phi$. You may need some extra states and transitions.
 	$$
 		\xymatrix@ur@R=2pc@C=2pc{
-			*+[o][F-]{\RM{S}} \ar@/^/[r]^{\{ \TT{x}_i | x_i = 1 \}} \ar@/_/[d]_{\{ \TT{x}_i | x_i = 0 \}} &
+			*+[o][F-]{\RM{S}} \ar@(l,l)[]^{} \ar@/^/[r]^{\{ \TT{x}_i | x_i = 1 \}} \ar@/_/[d]_{\{ \TT{x}_i | x_i = 0 \}} &
 			*+[o][F-]{T} \ar^{\TT{t}}[d] \ar^{\TT{f}}[l] \\
 			*+[o][F-]{F} \ar_{\TT{f}}[r] \ar_{\TT{t}}[u] & 
 			*+[o][F-]{A} \ar@(ur,rd)[]^{\Sigma}
@@ -105,7 +105,7 @@
 	Here is a sample for $\phi = (x_1 \vee \overline{x_2} \vee x_3) \wedge (x_2 \vee \overline{x_3})$.
 	$$
 	\xymatrix@R=2pc@C=2pc{
-		*+<1pc>[o][F-]{S} \ar[r]^{\epsilon} \ar[rd]_{\epsilon} & 
+		*+<1pc>[o][F-]{S} \ar@(l,l)[]^{} \ar[r]^{\epsilon} \ar[rd]_{\epsilon} & 
 		*+[o][F-]{A_0} \ar[r]^{\TT{0}} & 
 		*+[o][F-]{A_1} \ar[r]^{\TT{1}} & 
 		*+[o][F-]{A_2} \ar[r]^{\TT{0}} &
