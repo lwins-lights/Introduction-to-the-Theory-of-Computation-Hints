@@ -170,11 +170,11 @@
 		
 	%		8.31		%
 	\item[\Star 8.31]
-	Surely it is in $\RM{NL}$. On the other side, note that $\neg x \vee y = x \to y$. Then there is a path from $s$ to $t$ in $G = (V, E)$ if and only if
+	Note that $\neg x \vee y = x \to y$. Then there is a path from $s$ to $t$ in $G = (V, E)$ if and only if
 	$$
-		\phi = s \wedge (t \to \neg s) \bigwedge_{(u, v) \in E} (u \to v)
+		\phi = s \wedge (t \to \neg s) \wedge \bigwedge_{(u, v) \in E} (u \to v)
 	$$
-	is not satisfiable. Hence $\overline{\IT{PATH}} \leq_{\RM{L}} \IT{2SAT}$. And $\overline{\IT{PATH}}$ is $\RM{NL}$-complete by $\RM{NL} = \RM{coNL}$.
+	is not satisfiable. Hence $\overline{\IT{PATH}} \leq_{\RM{L}} \IT{2SAT}$. And $\overline{\IT{PATH}}$ is $\RM{NL}$-complete by $\RM{NL} = \RM{coNL}$. On the other side, you can use the similar approach to show that $\IT{2SAT} \in \RM{NL}$.
 	
 	%		8.32		%
 	\item[8.32]
