@@ -35,7 +35,7 @@ Any solution having essentially difference with existing ones would be quite val
 	Problems unsolved yet: 7.24 ~ 7.35, *7.49, *7.52, *7.53, 7.54  
 
 * __Chapter 8: Space Complexity__  
-	Problems unsolved yet: 8.15, 8.16, 8.20 ~ 8.22, 8.28 ~ 8.34
+	Problems unsolved yet: 8.15, 8.16, 8.20 ~ 8.22, 8.28 ~ 8.30, 8.32
 
 * Chapter 9
 

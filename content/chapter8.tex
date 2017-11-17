@@ -106,7 +106,7 @@
 	
 	%		8.25		%
 	\item[8.25]
-	Surely $\IT{BIPARTITE} \in \RM{coNL} = \RM{NL}$, since we can guess a odd cycle, whose length is no more than $n$, to verify $\Bra{G} \notin \IT{BIPARTITE}$.
+	Surely $\IT{BIPARTITE} \in \RM{coNL} = \RM{NL}$, since we can guess an odd cycle, whose length is no more than $n$, to verify $\Bra{G} \notin \IT{BIPARTITE}$.
 	
 	%		8.26		%
 	\item[8.26]
@@ -155,5 +155,41 @@
 	%		8.27		%
 	\item[8.27]
 	Reduce from $\IT{PATH}$. In order to determine whether a path from $s$ to $t$ exists in graph $G = (V, E)$, we add some edges $(v, s)$ and $(t, v)$ for all $v \in V$ to obtain a modified graph $G'$. Then a path exists if and only if $G'$ is strongly connected. On the other side, it is obviously in $\RM{NL}$.
+	
+	%		8.28		%
+	\item[8.28]
+	\Empty
+	
+	%		8.29		%
+	\item[8.29]
+	\Empty
+	
+	%		8.30		%
+	\item[8.30]
+	\Empty
+		
+	%		8.31		%
+	\item[\Star 8.31]
+	Surely it is in $\RM{NL}$. On the other side, note that $\neg x \vee y = x \to y$. Then there is a path from $s$ to $t$ in $G = (V, E)$ if and only if
+	$$
+		\phi = s \wedge (t \to \neg s) \bigwedge_{(u, v) \in E} (u \to v)
+	$$
+	is not satisfiable. Hence $\overline{\IT{PATH}} \leq_{\RM{L}} \IT{2SAT}$. And $\overline{\IT{PATH}}$ is $\RM{NL}$-complete by $\RM{NL} = \RM{coNL}$.
+	
+	%		8.32		%
+	\item[8.32]
+	\Empty
+	
+	%		8.33		%
+	\item[\Star 8.33] 
+	In other words, you are asked to find an $\RM{NL}$-complete language $A$ and a context-free language $B$ such that $A \equiv_{\RM{L}} B$. We choose $A = \IT{PATH}$ and $\{\TT{0}, \TT{1}\}^* \supseteq B = f(A)$, in which $f: A \to B$ is defined as follows.
+	$$
+		f(\Bra{G, s, t}) = \Bra{s}(\Bra{e_1} \Bra{e_2} \cdots \Bra{e_m} )^n\Bra{t}^{\mathcal{R}},
+	$$
+	where $G = (V, E)$, $|V| = n$, $E = \{e_1, \dots, e_m\}$, $\Bra{e_i} = \Bra{u_i}\Bra{v_i}^{\mathcal{R}}$ if $e_i = (u_i, v_i)$.
+	
+	%		8.34		%
+	\item[\Star 8.34] 
+	\Omit
 	
 \end{itemize}
