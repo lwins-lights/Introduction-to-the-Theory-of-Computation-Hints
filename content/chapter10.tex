@@ -2,6 +2,51 @@
 
 \begin{itemize}
 	
+	%		10.8		%
+	\item[10.8]
+	Let $D = (Q, \Sigma, \delta, q_0, F)$ be a \DFA\ recognizing $A$. Denote the substring of $w$ from the $a$-th character to the $b$-th character as $w_{[a,b]}$. Recursively, i.e., using divide and conquer solve that
+	$$
+		\text{is $\delta(q_i, w_{[a,b]}) = q_j\text{?} \quad (q_i, q_j \in Q)$}
+	$$
+	for a series of $(a, b)$s.
 	
+	%		10.9		%
+	\item[\Star 10.9]
+	Suppose $A$ has size--depth complexity $(f(n), \BigO(\log n))$, directly write a Boolean formula according to $A$'s circuit. It already has polynomial size due to the $\BigO(\log n)$ depth. On the other side, note that
+	$$
+		\phi(\psi, x_1, \dots, x_n) = (\neg \psi \wedge \phi(0, x_1, \dots, x_n)) \vee (\psi \wedge \phi(1, x_1, \dots, x_n))
+	$$
+	where $\phi, \psi$ are Boolean formulas, which can be used appropriately (choose $\psi$ carefully and use the above transformation in a recursive manner) to rewrite a $f(n)$ size Boolean formula within $\BigO(\log f(n))$ depth.
+	
+	%		10.10		%
+	\item[\Star 10.10]
+	Denote the length of input by $n$ as usual. For a language decided by a $k$-\PDA\ $P$, we can use dynamic programming to decide it in polynomial time, thereby proving $\bigcup_k \RM{PDA}_k \subseteq \Poly$. To be specific, let
+	$$
+		dp[(q, x, p_1, \dots, p_k)][(q', x', p'_1, \dots, p'_k)] \in \{0, 1\} \quad (q, q' \in Q,\, x, x' \in \Gamma,\, p_i, p'_i \in \{0, 1, \dots, n\})
+	$$
+	stand for whether when $P$ is started with configuration $(q, x, p_1, \dots, p_k)$, it can reach $(q', x', p'_1, \dots, p'_k)$, and these two configuration have the same stack except the difference between $x$ and $x'$, and meanwhile $P$ never pops $x$.
+	
+	On the other side, we can use a $k$-\PDA\ $P$ for some $k$ to simulate an arbitrary $\BigO(\log n)$ space alternating \TM , thereby proving $\bigcup_k \RM{PDA}_k \supseteq \RM{AL} = \Poly$. Nondeterminism or alternation will not be an issue since a \PDA\ can do depth-first search due to its having a stack. The following facts can help you simulate an $\BigO(\log n)$ work tape. Let $p_1, \dots, p_k\ (\in \{0, 1, \dots, n\})$ denote the positions of $k$ input heads of a $k$-\PDA\ $P$. There exists $m = k + \BigO(1)$ such that $P$ can manipulate $p_1, \dots, p_m$ in these manners: 
+	\begin{itemize}
+		\item Test whether $x = 0$, or set $x := 0$, or set $x := x \pm 1$ (abbreviated as $x_{+1}$ or $x_{-1}$) .
+		\item $y := x$, which can be implemented by
+		
+		$y := 0$; $z := 0$; \BF{while} $x \neq 0$ \BF{do} \{$x_{-1}$; $y_{+1}$; $z_{+1}$\}; \BF{while} $z \neq 0$ \BF{do} \{$z_{-1}$; $x_{+1}$\}; 
+		
+		\item \BF{repeat} $x$ \BF{times doing} $W$, which can be implemented by
+		
+		$y := x$; \BF{while} $y \neq 0$ \BF{do} \{$y_{-1}$; $W$\};
+		
+		\item $z = x \pm y$, $z = xy$, $z = \lfloor x/y \rfloor$, and so on.
+	\end{itemize}
+	Implement those functions necessary for you to simulate an $\BigO(\log n)$ read/write work tape.
+	
+	%		10.15		%
+	\item[\Star 10.15]
+	See \url{https://en.wikipedia.org/wiki/Proofs_of_Fermat\%27s_little_theorem}.
+	
+	%		10.16		%
+	\item[10.16]
+	\Omit
 	
 \end{itemize}

@@ -40,6 +40,5 @@ Any solution having essentially difference with existing ones would be quite val
 * __Chapter 9: Intractability__  
 	Problems unsolved yet: 9.20, 9.23
 
-* Chapter 10
-
-
+* __Chapter 10: Advanced Topics in Complexity Theory__  
+	Problems unsolved yet: 10.11 ~ 10.14, 10.17 ~ 10.23
