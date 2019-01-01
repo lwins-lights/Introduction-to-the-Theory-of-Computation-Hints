@@ -106,6 +106,7 @@
 	
 	%		6.26		%
 	\item[\Star 6.26] 
+	\Sol{1}
 	Suppose for the sake of contradiction that $\K(xy) \leq \K(x) + \K(y) + c$ always holds. Define
 	$$
 		f_n = \sum_{|x|=n} {2^{-\K(x)}}.
@@ -119,6 +120,25 @@
 		f_{n} = \sum_{|x|=n} {2^{-\K(x)}} \geq \sum_{q < 2^n} {2^{-\K(r(p,q))}} \geq 2^{-2 \log_2 p - d} \sum_{q < 2^n} \frac{1}{q} \geq \frac{n}{2^d (\log_2 n)^2},
 	$$
 	which apparently contradicts with $f_n \leq 2^c$.
+	
+	\Sol{2}
+	$ \forall c $, the following process of choosing $ x $ and $ y $ constructs the inequality directly.
+	
+	First, select an incompressible string $ w $ with length $ n $. Denote its prefix string of length $ \frac{1}{2} \log n $ as $ u $. Let number $ p $ equal the value of $ 1u $ when perceived as a  binary number.
+	
+	Then, divide $ w $ into two substrings $ w=xy $, where $ \left| x \right| = \frac{1}{2} \log n + p $ and $ \left| y \right| = n - \left| x \right| $ (since $ p < 2^{\frac{1}{2} \log n + 1} = 2 \sqrt{n}$, $ \left| y \right| > 0 $ is a valid string as long as $ n $ is large enough).
+	
+	We observe that since $ w $ is incompressible, $ K(xy) \ge n $. Also, $ K(y) \le \left| y \right| + c_1 $ for some constant $ c_1 $ independent of $ n $.
+	
+	We claim that $ K(x) \le p + c_2 $ for some constant $ c_2 $ independent of $ n $. In fact, the following Turing machine $ M $ generates $ x $ when the input string is the tail string of $ x $ with length $ p $:
+	
+	M="With input string $ z $:
+	
+	~~~~~~Calculate $ q = \left| z \right| $ and write $ q $ in binary representation on the tape;
+	
+	~~~~~~Remove the leading character 1 of $ q $, append $ q $ with $ z $, and output them together."
+	
+	Now, with all the above claims, we get $ K(xy) - \left( K(x) + K(y) + c \right) \ge \frac{1}{2} \log n - \left( c_1 + c_2 + c \right) > 0 $ as long as $ n $ is large enough.
 	
 	%		6.27		%
 	\item[6.27]
