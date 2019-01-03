@@ -32,7 +32,7 @@ Any solution having essentially difference with existing ones would be quite val
 * __Chapter 6: Advanced Topics in Computability Theory__  _[Done]_
 
 * __Chapter 7: Time Complexity__  
-	Problems unsolved yet: 7.24 ~ 7.35, *7.49, *7.52, *7.53, 7.54  
+	Problems unsolved yet: 7.24, 7.26 ~ 7.35, *7.49, *7.52, *7.53, 7.54  
 
 * __Chapter 8: Space Complexity__  
 	Problems unsolved yet: 8.15, 8.16, 8.20 ~ 8.22, 8.28 ~ 8.30, 8.32
@@ -41,4 +41,4 @@ Any solution having essentially difference with existing ones would be quite val
 	Problems unsolved yet: 9.20, 9.23
 
 * __Chapter 10: Advanced Topics in Complexity Theory__  
-	Problems unsolved yet: 10.11 ~ 10.14, 10.17 ~ 10.23
+	Problems unsolved yet: 10.23
