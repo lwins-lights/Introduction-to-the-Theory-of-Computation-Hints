@@ -63,6 +63,10 @@
 	\item[7.23]
 	\Omit
 	
+	%               7.25            %
+	\item[7.25]
+	If there is no unitary negated clause in $ \phi $, then $ \phi $ is satisfiable since we can just assign value 1 to all variables. However, if $ \phi $ contains some clauses in the form $ (\overline{x_i}) $, then this implies that the only possible way to make $ \phi $ true is to let those $ x_i $ equal 0. So $ \phi $ can be reduced to some shorter formula repeatedly.
+	
 	%		7.36		%
 	\item[\Star 7.36] 
 	It is in $\NPoly$ evidently. For the other side, reduce from $\IT{3SAT}$. If there is no limitation on $\Sigma$, let the following \DFA\ correspond to an assignment to variables $x_1, x_2, \dots, x_n$ in 3cnf-formula $\phi$. You may need some extra states and transitions.
